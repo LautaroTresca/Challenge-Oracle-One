@@ -14,6 +14,7 @@
 
     <main>
         <input class="ingreseTextoAqui" type="text" placeholder="Ingrese texto aqui" id="textoSinEncriptar">
+        
         <aside class="rectangulo">
             <img src="img/Muñeco.svg" alt="dibujo-muñeco">
             <section class="contenedorMensajesRectangulo">
@@ -23,7 +24,7 @@
         </aside>
         
         <aside id="rectangulo2" class="rectangulo2">
-            <textarea id="textoEncriptado" class="textarea" cols="30" rows="10" readonly>texto</textarea>
+            <textarea id="contenedorConTextoEncriptado" class="textarea" cols="30" rows="10" readonly></textarea>
             
             <button id="botonCopiar" class="botonCopiar" type="text" >Copiar</button>
         </aside>
@@ -34,8 +35,8 @@
         </section>
 
         <section class="contenedorBotones">
-            <button id="botonEncriptar" onclick="encriptar()" class="boton botonEncriptar">Encriptar</button>
-            <button class="boton botonDesencriptar" onclick="desencriptar()">Desencriptar</button>
+            <button id="botonEncriptar" class="boton botonEncriptar">Encriptar</button>
+            <button id="botonDesencriptar" class="boton botonDesencriptar">Desencriptar</button>
         </section>
 
     </main>
