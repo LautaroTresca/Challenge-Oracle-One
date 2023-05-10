@@ -166,6 +166,18 @@ main{
     color: #0A3871;
 }
 
+.botonEncriptar:hover{
+    color: #0A3871;
+    background: #D8DFE8;
+    transition: .2s;
+}
+
+.botonDesencriptar:hover{
+    color: #FFFFFF;
+    background: #0A3871;
+    transition: .2s;
+}
+
 .rectangulo2{
     display: none;
     position: absolute;
@@ -210,4 +222,10 @@ main{
     line-height: 19px;
     text-align: center;
     color: #0A3871;
+}
+
+.botonCopiar:hover{
+    background: #0A3871;
+    color: #FFFFFF;
+    transition: .2s;
 }
