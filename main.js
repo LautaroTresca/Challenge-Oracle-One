@@ -8,6 +8,8 @@ let texto = " ";
 let textoEncriptado = "";
 let letraACodificar = texto.length;
 
+inputTextoEntrada.focus();
+
 function verificarLetras(letra) {
     if(letra === "e"){
         letra = "enter";
@@ -32,6 +34,12 @@ function verificarLetras(letra) {
 }
 
 
+function copiarTexto(){
+    let textoACopiar = contenedorConTextoEncriptado.value;
+    navigator.clipboard.writeText(textoACopiar);
+    console.log("texto copiado: " + textoACopiar)
+}
+
 botonEncriptar.addEventListener("click", () => {
     rectangulo2.style.display = "flex";
     contenedorConTextoEncriptado.innerText = textoEncriptado.valueOf()
@@ -43,17 +51,21 @@ botonDesencriptar.addEventListener("click", () => {
 })
 
 
-inputTextoEntrada.addEventListener("click", () => {
-    inputTextoEntrada.value = ""
-})
+// inputTextoEntrada.addEventListener("click", () => {
+//     inputTextoEntrada.value = ""
+// })
 
 
 inputTextoEntrada.addEventListener("keypress", () => {
     texto = inputTextoEntrada.value;
-    console.log(texto.length)
     letraACodificar = texto.charAt(texto.length - 1);
     console.log(letraACodificar)
     verificarLetras(letraACodificar);
+})
+
+
+botonCopiar.addEventListener("click", () => {
+    copiarTexto()
 })
 
 

@@ -51,6 +51,10 @@ main{
     background-color: #F3F5FC;
 }
 
+.ingreseTextoAqui:focus{
+    outline: none;
+}
+
 .rectangulo{
     display: flex;
     position: absolute;
@@ -86,7 +90,7 @@ main{
     color: #343A40;
 }
 
-.ingreseElTexto{
+.mensajeRecuadro{
     width: 336px;
     height: 48px;
     font-family: 'Inter';
