@@ -37,35 +37,37 @@ function verificarLetras(letra) {
 function copiarTexto(){
     let textoACopiar = contenedorConTextoEncriptado.value;
     navigator.clipboard.writeText(textoACopiar);
-    console.log("texto copiado: " + textoACopiar)
 }
 
 botonEncriptar.addEventListener("click", () => {
     rectangulo2.style.display = "flex";
-    contenedorConTextoEncriptado.innerText = textoEncriptado.valueOf()
+    contenedorConTextoEncriptado.innerText = textoEncriptado.valueOf();
+    inputTextoEntrada.value = "";
+    textoEncriptado = "";
 })
 
 
 botonDesencriptar.addEventListener("click", () => {
-    rectangulo2.style.display = "none";
+    rectangulo2.style.display = "flex";
 })
 
 
-// inputTextoEntrada.addEventListener("click", () => {
-//     inputTextoEntrada.value = ""
-// })
+inputTextoEntrada.addEventListener("click", () => {
+    inputTextoEntrada.value = ""
+})
 
 
-inputTextoEntrada.addEventListener("keypress", () => {
-    texto = inputTextoEntrada.value;
-    letraACodificar = texto.charAt(texto.length - 1);
-    console.log(letraACodificar)
-    verificarLetras(letraACodificar);
+inputTextoEntrada.addEventListener("keyup", (event) => {
+   if(event.key = /^[a-z-?]$/.test(event.key)){
+       texto = inputTextoEntrada.value;
+       letraACodificar = texto.charAt(texto.length - 1);
+       verificarLetras(letraACodificar);
+   }
 })
 
 
 botonCopiar.addEventListener("click", () => {
-    copiarTexto()
+    copiarTexto();
     Toastify({
         text: "¡Copiado!",
         duration: 3000,

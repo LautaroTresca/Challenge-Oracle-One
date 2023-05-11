@@ -174,12 +174,14 @@ main{
     color: #0A3871;
     background: #D8DFE8;
     transition: .2s;
+    cursor: pointer;
 }
 
 .botonDesencriptar:hover{
     color: #FFFFFF;
     background: #0A3871;
     transition: .2s;
+    cursor: pointer;
 }
 
 .rectangulo2{
@@ -232,6 +234,7 @@ main{
     background: #0A3871;
     color: #FFFFFF;
     transition: .2s;
+    cursor: pointer;
 }
 
 .toastify{
