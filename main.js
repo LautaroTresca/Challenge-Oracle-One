@@ -4,9 +4,9 @@ const rectangulo2 = document.getElementById("rectangulo2");
 const botonCopiar = document.getElementById("botonCopiar");
 let contenedorConTextoEncriptado = document.getElementById("contenedorConTextoEncriptado");
 let inputTextoEntrada = document.getElementById("textoSinEncriptar"); 
-let texto = "";
-let textoEncriptado = ""
-let letraACodificar = texto.length
+let texto = " ";
+let textoEncriptado = "";
+let letraACodificar = texto.length;
 
 function verificarLetras(letra) {
     if(letra === "e"){
@@ -27,7 +27,6 @@ function verificarLetras(letra) {
     else if(letra === ""){
         letra += ""
     }
-    console.log(letra);
 
     textoEncriptado += letra
 }
@@ -44,10 +43,17 @@ botonDesencriptar.addEventListener("click", () => {
 })
 
 
+inputTextoEntrada.addEventListener("click", () => {
+    inputTextoEntrada.value = ""
+})
+
+
 inputTextoEntrada.addEventListener("keypress", () => {
     texto = inputTextoEntrada.value;
-    letraACodificar = texto.charAt(texto.length -1);
-    verificarLetras(letraACodificar)
+    console.log(texto.length)
+    letraACodificar = texto.charAt(texto.length - 1);
+    console.log(letraACodificar)
+    verificarLetras(letraACodificar);
 })
 
 
