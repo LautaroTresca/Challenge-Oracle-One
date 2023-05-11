@@ -66,6 +66,17 @@ inputTextoEntrada.addEventListener("keypress", () => {
 
 botonCopiar.addEventListener("click", () => {
     copiarTexto()
+    Toastify({
+        text: "¡Copiado!",
+        duration: 3000,
+        destination: "",
+        newWindow: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true,
+        className: "toastify",
+        onClick: function(){} 
+      }).showToast();
 })
 
 

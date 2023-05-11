@@ -233,3 +233,11 @@ main{
     color: #FFFFFF;
     transition: .2s;
 }
+
+.toastify{
+    background: #0a3871;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
