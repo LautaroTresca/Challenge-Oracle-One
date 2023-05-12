@@ -6,6 +6,7 @@ let contenedorConTextoEncriptado = document.getElementById("contenedorConTextoEn
 let inputTextoEntrada = document.getElementById("textoSinEncriptar"); 
 let texto = " ";
 let textoEncriptado = "";
+let textDecodificado = "";
 let letraACodificar = texto.length;
 
 inputTextoEntrada.focus();
@@ -33,6 +34,34 @@ function verificarLetras(letra) {
     textoEncriptado += letra
 }
 
+function decodificar(){
+    textoEncriptado = contenedorConTextoEncriptado.value;
+    for(i = 0; i < textoEncriptado.length; i++){
+        const letra = textoEncriptado[i]
+        if(letra === "enter"){
+            letra = "e";
+        }
+        else if(letra === "imes"){
+            letra = "i"
+        }
+        else if(letra === "ai"){
+            letra = "a"
+        }
+        else if(letra === "ober"){
+            letra = "o"
+        }
+        else if(letra === "ufat"){
+            letra = "u"
+        }
+        else if(letra === ""){
+            letra += ""
+        }
+
+        textDecodificado += letra;
+        console.log(textDecodificado)
+    }
+}
+
 
 function copiarTexto(){
     let textoACopiar = contenedorConTextoEncriptado.value;
@@ -42,13 +71,14 @@ function copiarTexto(){
 botonEncriptar.addEventListener("click", () => {
     rectangulo2.style.display = "flex";
     contenedorConTextoEncriptado.innerText = textoEncriptado.valueOf();
-    inputTextoEntrada.value = "";
     textoEncriptado = "";
 })
 
 
 botonDesencriptar.addEventListener("click", () => {
     rectangulo2.style.display = "flex";
+    decodificar();
+    contenedorConTextoEncriptado.innerText = textDecodificado.valueOf();
 })
 
 
