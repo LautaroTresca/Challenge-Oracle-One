@@ -2,8 +2,8 @@ const botonEncriptar = document.getElementById("botonEncriptar");
 const botonDesencriptar = document.getElementById("botonDesencriptar")
 const rectangulo2 = document.getElementById("rectangulo2");
 const botonCopiar = document.getElementById("botonCopiar");
-const contenedorConTexto = document.getElementById("contenedorConTexto");
 const TextoEntrada = document.getElementById("textoSinEncriptar"); 
+let contenedorConTexto = document.getElementById("contenedorConTexto");
 let texto = "";
 let textoEncriptado = "";
 let textoDecodificado = "";
@@ -19,13 +19,14 @@ function verificarSiHayTexto() {
             text: '',
             icon: 'warning',
             confirmButtonText: 'Ok'
-          })
+        })
     }
 }
 
 
 function encriptar() {
-
+    arrayTextoEncriptado = [];
+    
     for(i = 0; i < texto.length; i++){
         let letra = texto[i];
         
@@ -47,20 +48,20 @@ function encriptar() {
         else if(letra === " "){
             letra += "";
         }
-    
+        
         textoEncriptado += letra;
         arrayTextoEncriptado.push(letra);
     }
-
+    
 }
 
 
 function desencriptar(){
     
     for(i = 0; i < arrayTextoEncriptado.length ; i++){
-
+        
         let letra = arrayTextoEncriptado[i];
-
+        
         if(letra === "enter"){
             letra = "e";
         }
@@ -86,6 +87,7 @@ function desencriptar(){
 
 
 function copiarTexto(){
+    console.log(contenedorConTexto.value)
     let textoACopiar = contenedorConTexto.value;
     navigator.clipboard.writeText(textoACopiar);
 }
@@ -107,7 +109,7 @@ botonEncriptar.addEventListener("click", () => {
     verificarSiHayTexto();
     encriptar();
     rectangulo2.style.display = "flex";
-    contenedorConTexto.innerText += textoEncriptado;
+    contenedorConTexto.value = textoEncriptado.valueOf();
     textoEncriptado = "";
 })
 
@@ -116,7 +118,7 @@ botonDesencriptar.addEventListener("click", () => {
     verificarSiHayTexto();
     desencriptar();
     rectangulo2.style.display = "flex";
-    contenedorConTexto.innerText = textoDecodificado.valueOf();
+    contenedorConTexto.value = textoDecodificado.valueOf();
     textoDecodificado = "";
 })
 
