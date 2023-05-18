@@ -5,12 +5,10 @@
 }
 
 body{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
     background: #F3F5FC;
-    position: absolute;
-    width: 77%;
-    height: 100%;
-    left: 220px;
-    right: 220px;
 }
 
 header{
@@ -38,7 +36,7 @@ main{
 .ingreseTextoAqui{
     position: absolute;
     width: 577px;
-    height: 48px;
+    height: 560px;
     top: 168px;
     left: 240px;
     font-family: "Inter";
@@ -202,6 +200,7 @@ main{
 .textarea{
     position: relative;
     width: 80%;
+    height: 675px;
     margin: 32px;
     border: none;
     resize: none;
@@ -210,7 +209,6 @@ main{
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-    overflow-y: hidden;
 }
 
 .botonCopiar{
@@ -243,4 +241,116 @@ main{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background: #F3F5FC;
+        position: absolute;
+        width: 100%;
+        height: 1174px;
+        left: 0;
+        right: 0;
+    }
+
+    header{
+        display: block;
+        position: absolute;
+        left: 5.21%;
+        right: 90.74%;
+        top: 6.25%;
+        bottom: 89.8%;
+    }
+
+
+    .ingreseTextoAqui{
+        position: absolute;
+        width: 688px;
+        height: 48px;
+        left: 40px;
+        top: 240px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 150%;
+        color: #0A3871;
+    }
+
+
+    .contenedorAdvertencia{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 8px;
+
+        position: absolute;
+        width: 229px;
+        height: 18px;
+        left: 40px;
+        top: 836px;
+    }
+
+    .contenedorBotones{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+
+        position: absolute;
+        width: 688px;
+        height: 67px;
+        left: 40px;
+        top: 870px;
+    }
+
+
+    .rectangulo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: absolute;
+        width: 688px;
+        height: 133px;
+        left: 40px;
+        top: 1001px;
+    }
+
+    .ningunMensajeEncontrado{
+        display: flex;
+        flex-direction: column; 
+        width: 624px;
+        justify-content: center;
+    }
+
+    .mensajeRecuadro{
+        width: 100%;
+        height: 100%;
+    }
+
+    .muñeco{
+        display: none;
+    }
+
+
+    .rectangulo2{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: absolute;
+        width: 688px;
+        height: 343px;
+        left: 40px;
+        top: 1001px;
+    }
+
+    .botonCopiar{
+        width: 624px;
+        height: 67px;
+        padding: 24px;
+    }
 }

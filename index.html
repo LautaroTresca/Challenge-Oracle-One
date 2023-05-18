@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css">
     <title>Encriptador De Texto</title>
 </head>
 <body>
@@ -14,10 +15,10 @@
     </header>
     
     <main>
-        <input class="ingreseTextoAqui" type="text" placeholder="Ingrese texto aqui" id="textoSinEncriptar">
+        <textarea class="ingreseTextoAqui" type="text" placeholder="Ingrese texto aqui" id="textoSinEncriptar"></textarea>
         
         <aside class="rectangulo">
-            <img src="img/Muñeco.svg" alt="dibujo-muñeco">
+            <img class="muñeco" src="img/Muñeco.svg" alt="dibujo-muñeco">
             <section class="contenedorMensajesRectangulo">
                 <p class="ningunMensajeEncontrado">Ningún mensaje fue encontrado</p>
                 <p class="mensajeRecuadro">Ingresa el texto que desees encriptar o desencriptar.</p>
@@ -29,20 +30,21 @@
             
             <button id="botonCopiar" class="botonCopiar" type="text" >Copiar</button>
         </aside>
-
+        
         <section class="contenedorAdvertencia">
-                <img class="signoExclamacion" src="img/bi_exclamation-circle-fill.svg" alt="signo-exclamacion">
-                <p class="textoAdvertencia">Solo letras minusculas y sin acentos</p>
+            <img class="signoExclamacion" src="img/bi_exclamation-circle-fill.svg" alt="signo-exclamacion">
+            <p class="textoAdvertencia">Solo letras minusculas y sin acentos</p>
         </section>
 
         <section class="contenedorBotones">
             <button id="botonEncriptar" class="boton botonEncriptar">Encriptar</button>
             <button id="botonDesencriptar" class="boton botonDesencriptar">Desencriptar</button>
         </section>
-
+        
     </main>
-
+    
     <script src="main.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>
