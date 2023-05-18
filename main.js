@@ -2,62 +2,82 @@ const botonEncriptar = document.getElementById("botonEncriptar");
 const botonDesencriptar = document.getElementById("botonDesencriptar")
 const rectangulo2 = document.getElementById("rectangulo2");
 const botonCopiar = document.getElementById("botonCopiar");
-let contenedorConTexto = document.getElementById("contenedorConTexto");
-let inputTextoEntrada = document.getElementById("textoSinEncriptar"); 
-let texto = " ";
+const contenedorConTexto = document.getElementById("contenedorConTexto");
+const TextoEntrada = document.getElementById("textoSinEncriptar"); 
+let texto = "";
 let textoEncriptado = "";
-let arrayConTextoEncriptado = [];
 let textoDecodificado = "";
-inputTextoEntrada.focus();
+let arrayTextoEncriptado = [];
+
 
 // ---------------------------FUNCIONES------------------------ //
 
-
-function encriptar(letra) {
-    console.log(letra)
-    if(letra === "e"){
-        letra = "enter";
+function verificarSiHayTexto() {
+    if(texto === ""){
+        Swal.fire({
+            title: 'Debes poner algun texto',
+            text: '',
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+          })
     }
-    else if(letra === "i"){
-        letra = "imes"
-    }
-    else if(letra === "a"){
-        letra = "ai"
-    }
-    else if(letra === "o"){
-        letra = "ober"
-    }
-    else if(letra === "u"){
-        letra = "ufat"
-    }
-    else if(letra === " "){
-        letra += ""
-    }
-
-    textoEncriptado += letra
-    arrayConTextoEncriptado.push(letra)
 }
 
+
+function encriptar() {
+
+    for(i = 0; i < texto.length; i++){
+        let letra = texto[i];
+        
+        if(letra === "e"){
+            letra = "enter";
+        }
+        else if(letra === "i"){
+            letra = "imes";
+        }
+        else if(letra === "a"){
+            letra = "ai";
+        }
+        else if(letra === "o"){
+            letra = "ober";
+        }
+        else if(letra === "u"){
+            letra = "ufat";
+        }
+        else if(letra === " "){
+            letra += "";
+        }
+    
+        textoEncriptado += letra;
+        arrayTextoEncriptado.push(letra);
+    }
+
+}
+
+
 function desencriptar(){
-    for(i = 0; i < arrayConTextoEncriptado.length; i++){
-        let letra = arrayConTextoEncriptado[i]
+    
+    for(i = 0; i < arrayTextoEncriptado.length ; i++){
+
+        let letra = arrayTextoEncriptado[i];
+
         if(letra === "enter"){
             letra = "e";
         }
         else if(letra === "imes"){
-            letra = "i"
+            letra = "i";
         }
         else if(letra === "ai"){
-            letra = "a"
+            letra = "a";
         }
         else if(letra === "ober"){
-            letra = "o"
+            letra = "o";
         }
         else if(letra === "ufat"){
-            letra = "u"
+            letra = "u";
         }
         else if(letra === ""){
-            letra += ""
+            letra += "";
         }
 
         textoDecodificado += letra;
@@ -73,30 +93,31 @@ function copiarTexto(){
 
 
 
-
 // ---------------------------EVENTOS------------------------ //
 
 
 
 
+TextoEntrada.addEventListener("change", () => {
+    texto = TextoEntrada.value;
+})
+
 
 botonEncriptar.addEventListener("click", () => {
+    verificarSiHayTexto();
+    encriptar();
     rectangulo2.style.display = "flex";
-    contenedorConTexto.innerText = textoEncriptado.valueOf();
+    contenedorConTexto.innerText += textoEncriptado;
     textoEncriptado = "";
 })
 
 
 botonDesencriptar.addEventListener("click", () => {
-    rectangulo2.style.display = "flex";
+    verificarSiHayTexto();
     desencriptar();
+    rectangulo2.style.display = "flex";
     contenedorConTexto.innerText = textoDecodificado.valueOf();
-})
-
-
-inputTextoEntrada.addEventListener("keypress", (event) => {
-    letra = event.key;
-    encriptar(letra);
+    textoDecodificado = "";
 })
 
 
