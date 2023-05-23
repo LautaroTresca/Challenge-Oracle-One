@@ -259,8 +259,7 @@ main{
         position: absolute;
         width: 768px;
         height: 1174px;
-        left: 0px;
-        right: 0px;
+        left: 0;
     }
 
     header{
